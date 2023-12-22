@@ -1,0 +1,15 @@
+[2023-12-21T14:29:45.539+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: liverpool_dag.load_data manual__2023-12-21T14:28:11.047684+00:00 [queued]>
+[2023-12-21T14:29:45.558+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: liverpool_dag.load_data manual__2023-12-21T14:28:11.047684+00:00 [queued]>
+[2023-12-21T14:29:45.558+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 4
+[2023-12-21T14:29:45.611+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_data> on 2023-12-21 14:28:11.047684+00:00
+[2023-12-21T14:29:46.834+0000] {standard_task_runner.py:57} INFO - Started process 413 to run task
+[2023-12-21T14:30:00.071+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'liverpool_dag', 'load_data', 'manual__2023-12-21T14:28:11.047684+00:00', '--job-id', '273', '--raw', '--subdir', 'DAGS_FOLDER/liverpool.py', '--cfg-path', '/tmp/tmp6aej_ucv']
+[2023-12-21T14:30:04.971+0000] {standard_task_runner.py:85} INFO - Job 273: Subtask load_data
+[2023-12-21T14:30:16.216+0000] {task_command.py:416} INFO - Running <TaskInstance: liverpool_dag.load_data manual__2023-12-21T14:28:11.047684+00:00 [running]> on host d017a9b7b4e6
+[2023-12-21T14:30:17.282+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='liverpool_dag' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2023-12-21T14:28:11.047684+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-21T14:28:11.047684+00:00'
+[2023-12-21T14:30:17.453+0000] {utils.py:22} ERROR - Error al conectarse a la base de datos: Can't load plugin: sqlalchemy.dialects:***
+[2023-12-21T14:30:17.455+0000] {liverpool.py:36} ERROR - No se pudo obtener el motor de la base de datos.
+[2023-12-21T14:30:17.456+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-12-21T14:30:17.477+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=liverpool_dag, task_id=load_data, execution_date=20231221T142811, start_date=20231221T142945, end_date=20231221T143017
+[2023-12-21T14:30:17.515+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-21T14:30:17.541+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

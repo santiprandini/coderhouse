@@ -1,0 +1,20 @@
+[2023-12-18T19:54:13.527+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: liverpool_dag.load_data_to_db manual__2023-12-18T19:52:59.094608+00:00 [queued]>
+[2023-12-18T19:54:13.540+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: liverpool_dag.load_data_to_db manual__2023-12-18T19:52:59.094608+00:00 [queued]>
+[2023-12-18T19:54:13.541+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 4
+[2023-12-18T19:54:13.570+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_data_to_db> on 2023-12-18 19:52:59.094608+00:00
+[2023-12-18T19:54:13.577+0000] {standard_task_runner.py:57} INFO - Started process 250 to run task
+[2023-12-18T19:54:13.580+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'liverpool_dag', 'load_data_to_db', 'manual__2023-12-18T19:52:59.094608+00:00', '--job-id', '157', '--raw', '--subdir', 'DAGS_FOLDER/liverpool.py', '--cfg-path', '/tmp/tmptkoo6lyj']
+[2023-12-18T19:54:13.584+0000] {standard_task_runner.py:85} INFO - Job 157: Subtask load_data_to_db
+[2023-12-18T19:54:13.653+0000] {task_command.py:416} INFO - Running <TaskInstance: liverpool_dag.load_data_to_db manual__2023-12-18T19:52:59.094608+00:00 [running]> on host d017a9b7b4e6
+[2023-12-18T19:54:13.778+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='liverpool_dag' AIRFLOW_CTX_TASK_ID='load_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-12-18T19:52:59.094608+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-18T19:52:59.094608+00:00'
+[2023-12-18T19:54:13.781+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: cargar_datos_a_bd() missing 1 required positional argument: 'df'
+[2023-12-18T19:54:13.796+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=liverpool_dag, task_id=load_data_to_db, execution_date=20231218T195259, start_date=20231218T195413, end_date=20231218T195413
+[2023-12-18T19:54:13.813+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 157 for task load_data_to_db (cargar_datos_a_bd() missing 1 required positional argument: 'df'; 250)
+[2023-12-18T19:54:13.834+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-18T19:54:13.887+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

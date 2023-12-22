@@ -1,0 +1,20 @@
+[2023-12-18T19:14:40.335+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: liverpool_dag.process_data manual__2023-12-18T19:09:26.072347+00:00 [queued]>
+[2023-12-18T19:14:40.429+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: liverpool_dag.process_data manual__2023-12-18T19:09:26.072347+00:00 [queued]>
+[2023-12-18T19:14:40.436+0000] {taskinstance.py:1361} INFO - Starting attempt 4 of 4
+[2023-12-18T19:14:41.149+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): process_data> on 2023-12-18 19:09:26.072347+00:00
+[2023-12-18T19:14:41.549+0000] {standard_task_runner.py:57} INFO - Started process 281 to run task
+[2023-12-18T19:14:41.608+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'liverpool_dag', 'process_data', 'manual__2023-12-18T19:09:26.072347+00:00', '--job-id', '134', '--raw', '--subdir', 'DAGS_FOLDER/liverpool.py', '--cfg-path', '/tmp/tmpbbvsmxwh']
+[2023-12-18T19:14:41.638+0000] {standard_task_runner.py:85} INFO - Job 134: Subtask process_data
+[2023-12-18T19:14:42.133+0000] {task_command.py:416} INFO - Running <TaskInstance: liverpool_dag.process_data manual__2023-12-18T19:09:26.072347+00:00 [running]> on host d017a9b7b4e6
+[2023-12-18T19:14:42.854+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='liverpool_dag' AIRFLOW_CTX_TASK_ID='process_data' AIRFLOW_CTX_EXECUTION_DATE='2023-12-18T19:09:26.072347+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-18T19:09:26.072347+00:00'
+[2023-12-18T19:14:42.863+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: procesar_datos() missing 1 required positional argument: 'data'
+[2023-12-18T19:14:42.922+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=liverpool_dag, task_id=process_data, execution_date=20231218T190926, start_date=20231218T191440, end_date=20231218T191442
+[2023-12-18T19:14:42.990+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 134 for task process_data (procesar_datos() missing 1 required positional argument: 'data'; 281)
+[2023-12-18T19:14:43.011+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-18T19:14:43.102+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

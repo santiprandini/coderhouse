@@ -1,0 +1,14 @@
+[2023-12-22T03:08:26.211+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: liverpool_dag.send_email_on_failure manual__2023-12-22T03:05:14.672349+00:00 [queued]>
+[2023-12-22T03:08:26.226+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: liverpool_dag.send_email_on_failure manual__2023-12-22T03:05:14.672349+00:00 [queued]>
+[2023-12-22T03:08:26.227+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 4
+[2023-12-22T03:08:26.267+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): send_email_on_failure> on 2023-12-22 03:05:14.672349+00:00
+[2023-12-22T03:08:26.277+0000] {standard_task_runner.py:57} INFO - Started process 303 to run task
+[2023-12-22T03:08:26.282+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'liverpool_dag', 'send_email_on_failure', 'manual__2023-12-22T03:05:14.672349+00:00', '--job-id', '464', '--raw', '--subdir', 'DAGS_FOLDER/liverpool.py', '--cfg-path', '/tmp/tmp4lapbgqh']
+[2023-12-22T03:08:26.287+0000] {standard_task_runner.py:85} INFO - Job 464: Subtask send_email_on_failure
+[2023-12-22T03:08:26.391+0000] {task_command.py:416} INFO - Running <TaskInstance: liverpool_dag.send_email_on_failure manual__2023-12-22T03:05:14.672349+00:00 [running]> on host d017a9b7b4e6
+[2023-12-22T03:08:26.531+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='liverpool_dag' AIRFLOW_CTX_TASK_ID='send_email_on_failure' AIRFLOW_CTX_EXECUTION_DATE='2023-12-22T03:05:14.672349+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-22T03:05:14.672349+00:00'
+[2023-12-22T03:08:28.071+0000] {logging_mixin.py:154} INFO - Error al enviar el correo: 'ascii' codec can't encode character '\xf3' in position 28: ordinal not in range(128)
+[2023-12-22T03:08:28.075+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-12-22T03:08:28.122+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=liverpool_dag, task_id=send_email_on_failure, execution_date=20231222T030514, start_date=20231222T030826, end_date=20231222T030828
+[2023-12-22T03:08:28.189+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-22T03:08:28.242+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

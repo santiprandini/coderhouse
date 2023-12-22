@@ -1,0 +1,14 @@
+[2023-12-21T14:14:59.237+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: liverpool_dag.connect_to_db manual__2023-12-21T14:14:52.018448+00:00 [queued]>
+[2023-12-21T14:14:59.255+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: liverpool_dag.connect_to_db manual__2023-12-21T14:14:52.018448+00:00 [queued]>
+[2023-12-21T14:14:59.256+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 4
+[2023-12-21T14:14:59.294+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): connect_to_db> on 2023-12-21 14:14:52.018448+00:00
+[2023-12-21T14:14:59.303+0000] {standard_task_runner.py:57} INFO - Started process 257 to run task
+[2023-12-21T14:14:59.310+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'liverpool_dag', 'connect_to_db', 'manual__2023-12-21T14:14:52.018448+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/liverpool.py', '--cfg-path', '/tmp/tmpy533i3jz']
+[2023-12-21T14:14:59.325+0000] {standard_task_runner.py:85} INFO - Job 260: Subtask connect_to_db
+[2023-12-21T14:14:59.498+0000] {task_command.py:416} INFO - Running <TaskInstance: liverpool_dag.connect_to_db manual__2023-12-21T14:14:52.018448+00:00 [running]> on host d017a9b7b4e6
+[2023-12-21T14:15:00.127+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='liverpool_dag' AIRFLOW_CTX_TASK_ID='connect_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-12-21T14:14:52.018448+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-21T14:14:52.018448+00:00'
+[2023-12-21T14:15:00.432+0000] {utils.py:22} ERROR - Error al conectarse a la base de datos: Can't load plugin: sqlalchemy.dialects:***
+[2023-12-21T14:15:00.433+0000] {python.py:194} INFO - Done. Returned value was: None
+[2023-12-21T14:15:00.489+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=liverpool_dag, task_id=connect_to_db, execution_date=20231221T141452, start_date=20231221T141459, end_date=20231221T141500
+[2023-12-21T14:15:00.919+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-12-21T14:15:00.977+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

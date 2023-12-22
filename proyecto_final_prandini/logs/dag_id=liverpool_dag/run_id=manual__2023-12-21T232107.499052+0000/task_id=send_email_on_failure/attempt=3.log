@@ -1,0 +1,20 @@
+[2023-12-21T23:26:25.406+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: liverpool_dag.send_email_on_failure manual__2023-12-21T23:21:07.499052+00:00 [queued]>
+[2023-12-21T23:26:25.429+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: liverpool_dag.send_email_on_failure manual__2023-12-21T23:21:07.499052+00:00 [queued]>
+[2023-12-21T23:26:25.430+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 4
+[2023-12-21T23:26:25.484+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): send_email_on_failure> on 2023-12-21 23:21:07.499052+00:00
+[2023-12-21T23:26:25.495+0000] {standard_task_runner.py:57} INFO - Started process 412 to run task
+[2023-12-21T23:26:25.503+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'liverpool_dag', 'send_email_on_failure', 'manual__2023-12-21T23:21:07.499052+00:00', '--job-id', '380', '--raw', '--subdir', 'DAGS_FOLDER/liverpool.py', '--cfg-path', '/tmp/tmp22aracmz']
+[2023-12-21T23:26:25.509+0000] {standard_task_runner.py:85} INFO - Job 380: Subtask send_email_on_failure
+[2023-12-21T23:26:25.691+0000] {task_command.py:416} INFO - Running <TaskInstance: liverpool_dag.send_email_on_failure manual__2023-12-21T23:21:07.499052+00:00 [running]> on host d017a9b7b4e6
+[2023-12-21T23:26:25.901+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='liverpool_dag' AIRFLOW_CTX_TASK_ID='send_email_on_failure' AIRFLOW_CTX_EXECUTION_DATE='2023-12-21T23:21:07.499052+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-21T23:21:07.499052+00:00'
+[2023-12-21T23:26:25.922+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: enviar_email() missing 1 required positional argument: 'context'
+[2023-12-21T23:26:25.959+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=liverpool_dag, task_id=send_email_on_failure, execution_date=20231221T232107, start_date=20231221T232625, end_date=20231221T232625
+[2023-12-21T23:26:25.991+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 380 for task send_email_on_failure (enviar_email() missing 1 required positional argument: 'context'; 412)
+[2023-12-21T23:26:26.007+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-21T23:26:26.059+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

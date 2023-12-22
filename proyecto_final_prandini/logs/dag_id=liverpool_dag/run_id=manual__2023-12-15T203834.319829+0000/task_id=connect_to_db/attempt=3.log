@@ -1,0 +1,20 @@
+[2023-12-15T20:40:40.961+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: liverpool_dag.connect_to_db manual__2023-12-15T20:38:34.319829+00:00 [queued]>
+[2023-12-15T20:40:40.971+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: liverpool_dag.connect_to_db manual__2023-12-15T20:38:34.319829+00:00 [queued]>
+[2023-12-15T20:40:40.972+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 4
+[2023-12-15T20:40:40.993+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): connect_to_db> on 2023-12-15 20:38:34.319829+00:00
+[2023-12-15T20:40:41.000+0000] {standard_task_runner.py:57} INFO - Started process 303 to run task
+[2023-12-15T20:40:41.005+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'liverpool_dag', 'connect_to_db', 'manual__2023-12-15T20:38:34.319829+00:00', '--job-id', '60', '--raw', '--subdir', 'DAGS_FOLDER/liverpool.py', '--cfg-path', '/tmp/tmp8j4yfh9j']
+[2023-12-15T20:40:41.008+0000] {standard_task_runner.py:85} INFO - Job 60: Subtask connect_to_db
+[2023-12-15T20:40:41.083+0000] {task_command.py:416} INFO - Running <TaskInstance: liverpool_dag.connect_to_db manual__2023-12-15T20:38:34.319829+00:00 [running]> on host d017a9b7b4e6
+[2023-12-15T20:40:41.197+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='liverpool_dag' AIRFLOW_CTX_TASK_ID='connect_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-12-15T20:38:34.319829+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-12-15T20:38:34.319829+00:00'
+[2023-12-15T20:40:41.199+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: connect_to_db() missing 1 required positional argument: 'conn_string'
+[2023-12-15T20:40:41.212+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=liverpool_dag, task_id=connect_to_db, execution_date=20231215T203834, start_date=20231215T204040, end_date=20231215T204041
+[2023-12-15T20:40:41.227+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 60 for task connect_to_db (connect_to_db() missing 1 required positional argument: 'conn_string'; 303)
+[2023-12-15T20:40:41.257+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-12-15T20:40:41.288+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
